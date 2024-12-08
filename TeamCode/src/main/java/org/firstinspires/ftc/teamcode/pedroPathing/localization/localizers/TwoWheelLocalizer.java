@@ -96,7 +96,7 @@ public class TwoWheelLocalizer extends Localizer { // todo: make two wheel odo w
 
         // TODO: reverse any encoders necessary
         forwardEncoder.setDirection(Encoder.REVERSE);
-        strafeEncoder.setDirection(Encoder.FORWARD);
+        strafeEncoder.setDirection(Encoder.REVERSE);
 
         setStartPose(setStartPose);
         timer = new NanoTimer();
