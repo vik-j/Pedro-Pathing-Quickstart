@@ -38,7 +38,7 @@ public class FollowerConstants {
 
     // Translational PIDF coefficients (don't use integral)
     public static CustomPIDFCoefficients translationalPIDFCoefficients = new CustomPIDFCoefficients(
-            0.115,
+            0.1,
             0,
             0.001,
             0);
@@ -56,10 +56,10 @@ public class FollowerConstants {
 
     // Heading error PIDF coefficients
     public static CustomPIDFCoefficients headingPIDFCoefficients = new CustomPIDFCoefficients(
-            1.6,
+            2,
             0,
-            0,
-            0);
+            0.00005,
+            0.005);
 
     // Feed forward constant added on to the heading PIDF
     public static double headingPIDFFeedForward = 0.01;
@@ -67,7 +67,7 @@ public class FollowerConstants {
 
     // Drive PIDF coefficients
     public static CustomFilteredPIDFCoefficients drivePIDFCoefficients = new CustomFilteredPIDFCoefficients(
-            0.01,
+            0.00425,
             0,
             0.00001,
             0.6,
@@ -83,19 +83,19 @@ public class FollowerConstants {
 
 
     // Mass of robot in kilograms
-    public static double mass = 4.85;
+    public static double mass = 4.95;
 
     // Centripetal force to power scaling
-    public static double centripetalScaling = 0.0005;
+    public static double centripetalScaling = 0.00095;
 
 
     // Acceleration of the drivetrain when power is cut in inches/second^2 (should be negative)
     // if not negative, then the robot thinks that its going to go faster under 0 power
-    public static double forwardZeroPowerAcceleration = -49.20345599048501;
+    public static double forwardZeroPowerAcceleration = -50;
 
     // Acceleration of the drivetrain when power is cut in inches/second^2 (should be negative)
     // if not negative, then the robot thinks that its going to go faster under 0 power
-    public static double lateralZeroPowerAcceleration = -59.52564685833498;
+    public static double lateralZeroPowerAcceleration = -65;
 
     // A multiplier for the zero power acceleration to change the speed the robot decelerates at
     // the end of paths.
@@ -104,7 +104,7 @@ public class FollowerConstants {
     // Decreasing this will cause the deceleration at the end of the Path to be slower, making the
     // robot slower but reducing risk of end-of-path overshoots or localization slippage.
     // This can be set individually for each Path, but this is the default.
-    public static double zeroPowerAccelerationMultiplier = 4;
+    public static double zeroPowerAccelerationMultiplier = 6;
 
 
     // When the robot is at the end of its current Path or PathChain and the velocity goes below
